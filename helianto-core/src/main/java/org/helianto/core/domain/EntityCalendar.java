@@ -24,7 +24,7 @@ public class EntityCalendar
     private static final long serialVersionUID = 1L;
     
     @JsonIgnore
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name="entityId", nullable=true)
     private Entity entity;
     

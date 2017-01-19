@@ -24,7 +24,7 @@ public class ContextCalendar
     private static final long serialVersionUID = 1L;
     
     @JsonIgnore
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name="contextId", nullable=true)
     private Operator context;
     

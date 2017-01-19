@@ -64,7 +64,7 @@ public class Province  implements RootEntity, Comparable<Province> {
     private int id;
     
     @JsonIgnore
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name="operatorId", nullable=true)
     private Operator operator;
     

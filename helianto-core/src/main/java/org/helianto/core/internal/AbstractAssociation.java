@@ -51,12 +51,12 @@ public abstract class AbstractAssociation<P, C>
 	private int sequence;
 	
     @JsonBackReference("parent")
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="parentId", nullable=true)
 	protected P parent;
 	
     @JsonBackReference("child")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="childId", nullable=true)
 	protected C child;
 	

@@ -55,7 +55,7 @@ public class City
     private int version;
     
     @JsonIgnore
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name="contextId", nullable=true)
     private Operator context;
     

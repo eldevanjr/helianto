@@ -114,8 +114,7 @@ public class Operator implements java.io.Serializable {
     private String rfc822TimeZone;
     
     @JsonIgnore
-    @OneToMany(mappedBy="operator",
-    		fetch=FetchType.LAZY)
+    @OneToMany(mappedBy="operator")
     private Set<KeyType> keyTypes = new HashSet<KeyType>();
     
     @JsonIgnore
@@ -124,7 +123,7 @@ public class Operator implements java.io.Serializable {
     private Map<String, KeyType> keyTypeMap = new HashMap<String, KeyType>();
     
 	@JsonIgnore
-    @OneToMany(mappedBy="operator", fetch=FetchType.LAZY)
+    @OneToMany(mappedBy="operator")
     private Set<Province> provinces = new HashSet<Province>();
     
 	@JsonManagedReference 

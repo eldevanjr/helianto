@@ -48,7 +48,7 @@ public class State
     private int id;
     
     @JsonIgnore
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne()
     @JoinColumn(name="contextId", nullable=true)
     private Operator context;
     
