@@ -30,6 +30,8 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
+import org.hibernate.annotations.Type;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 /**
  * Log of main actions, including user actions, as
@@ -63,7 +65,7 @@ public class EventLog implements java.io.Serializable {
     @Column(length=20)
     private String eventType;
     
-    @Lob
+	@Type(type = "org.hibernate.type.TextType")
     private String contentAsString = "";
 
     /** 

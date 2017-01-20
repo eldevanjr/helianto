@@ -30,6 +30,7 @@ import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 
 import org.helianto.core.def.EventType;
+import org.hibernate.annotations.Type;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 /**
@@ -63,7 +64,7 @@ public class UserLog implements java.io.Serializable {
     
     private int eventType;
     
-    @Lob
+	@Type(type = "org.hibernate.type.TextType")
     private String contentAsString = "";
 
     /** 

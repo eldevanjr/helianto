@@ -54,6 +54,7 @@ import org.helianto.core.internal.AbstractCounter;
 import org.helianto.core.internal.KeyNameAdapter;
 import org.helianto.core.utils.StringListUtils;
 import org.helianto.user.def.UserType;
+import org.hibernate.annotations.Type;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 /**
@@ -124,7 +125,7 @@ public class UserGroup
     
     private Character priority = '9';
     
-	@Lob
+	@Type(type = "org.hibernate.type.TextType")
     private String userDesc = "";
     
     @Column(length=128)

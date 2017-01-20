@@ -1,8 +1,9 @@
 package org.helianto.document.internal;
 
 import javax.persistence.Column;
-import javax.persistence.Lob;
 import javax.persistence.MappedSuperclass;
+
+import org.hibernate.annotations.Type;
 
 /**
  * Superclass for versionable content.
@@ -25,7 +26,7 @@ public abstract class AbstractVersionableContent
     @Column(length=6)
     private String formattedVersion = "";
 
-    @Lob
+	@Type(type = "org.hibernate.type.TextType")
     private String changeSummary = "";
 
     public String getMajorChange() {
