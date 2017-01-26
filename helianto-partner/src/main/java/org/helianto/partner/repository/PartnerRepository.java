@@ -8,6 +8,7 @@ import org.helianto.partner.domain.Partner;
 import org.helianto.partner.domain.PrivateEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Partner repository.
@@ -22,6 +23,7 @@ public interface PartnerRepository extends JpaRepository<Partner, Serializable> 
 	 * @param privateEntity
 	 * @param category
 	 */
+	@Transactional
 	@Query("select partner from Partner partner where privateEntity = ?1 and category = ?2")
 	Partner findByPrivateEntityAndCategory(PrivateEntity privateEntity, Category category);
 	
@@ -30,6 +32,7 @@ public interface PartnerRepository extends JpaRepository<Partner, Serializable> 
 	 * 
 	 * @param privateEntity
 	 */
+	@Transactional
 	List<Partner> findByPrivateEntity(PrivateEntity privateEntity);
 	
 }
